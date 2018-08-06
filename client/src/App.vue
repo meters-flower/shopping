@@ -1,41 +1,69 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-  </div>
+    <router-view></router-view>
 </template>
-
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    export default {
+        
     }
-  },
-  mounted: function() {
-      this.axios({
-        url: '/admin/getAll'
-      }).then((res) => {
-        console.log(res);
-      });    
-  }
-}
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2 {
-  font-weight: normal;
+html,body,#app,.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
+body {
+    font: 14px/26px 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+a {
+    text-decoration: none
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clear::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.flexbox {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-col {
+  flex-direction: column;  
+}
+.flex-h {
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-v {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.container {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 </style>
